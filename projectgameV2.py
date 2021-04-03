@@ -44,7 +44,7 @@ def _hangman():
                 if user_letter in word_letters:
                     word_letters.remove(user_letter)
                     if(lives >0):
-                        print(_hangman.hangmanpics[lives])
+                        print(_hangman.hangmanpics[lives-1])
 
                 else:
                     lives += 1  # takes away a life if wrong
