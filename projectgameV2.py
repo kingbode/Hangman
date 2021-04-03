@@ -46,8 +46,8 @@ def _hangman():
                     print(_hangman.hangmanpics[lives])
 
                 else:
-                    print(_hangman.hangmanpics[lives])
                     lives += 1  # takes away a life if wrong
+                    print(_hangman.hangmanpics[lives])
                     missed_letters += user_letter + ','
 
 
