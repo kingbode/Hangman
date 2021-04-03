@@ -43,11 +43,19 @@ def _hangman():
 
                 if user_letter in word_letters:
                     word_letters.remove(user_letter)
-                    print(_hangman.hangmanpics[lives])
+                    if(lives >0):
+                        print(_hangman.hangmanpics[lives])
 
                 else:
                     lives += 1  # takes away a life if wrong
-                    print(_hangman.hangmanpics[lives])
+                    if (lives == 8):
+                        print(_hangman.hangmanpics[lives - 1])
+                        missed_letters += user_letter + ','
+
+                        break
+
+                    print(_hangman.hangmanpics[lives-1])
+
                     missed_letters += user_letter + ','
 
 
@@ -63,6 +71,7 @@ def _hangman():
             # print(_hangman.hangmanpics[lives])
             # word_list = [letter if letter in used_letters else '-' for letter in word.lower()]
             # print(' '.join(word_list).lower())
+            print('Misses : ', missed_letters.rstrip(',').lower())
 
             print("Sorry! You've lost. The word was", word)
             _hangman.lose()
